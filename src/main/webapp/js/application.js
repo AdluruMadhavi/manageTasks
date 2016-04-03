@@ -13,7 +13,7 @@ $(document).ready(
 						console.log("Password from Login Form = " + password);
 						$.ajax({
 							type : 'POST',
-							url : '',
+							url : 'http://localhost:8080/managetasks/login',
 							data : loginData,
 							contentType : "application/json",
 							dataType : 'json',
