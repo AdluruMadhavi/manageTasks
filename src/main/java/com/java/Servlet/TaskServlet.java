@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
+import com.googlecode.objectify.ObjectifyService;
 import com.java.domain.Task;
 import com.java.service.TaskService;
 
@@ -41,12 +42,12 @@ public class TaskServlet {
   
   @RequestMapping("/login")
 	@ResponseBody
-	public List<Task> validateLogin(@RequestBody) {
+	public List<Task> validateLogin(@RequestBody User user) {
 	  System.out.println("inside validateLogin");
 		 UserService userService = UserServiceFactory.getUserService();
-		    User user = userService.getCurrentUser();  // Find out who the user is.
+		    User user1 = userService.getCurrentUser();  // Find out who the user is.
 		    List<Task> tasks = null;
-		    if (user != null) {
+		    if (user1 != null) {
 		    	 
 
 		    	    // Run an ancestor query to ensure we see the most up-to-date
