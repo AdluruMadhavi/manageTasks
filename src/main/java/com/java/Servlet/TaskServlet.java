@@ -43,11 +43,17 @@ public class TaskServlet {
   @RequestMapping("/login")
 	@ResponseBody
 	public List<Task> validateLogin(@RequestBody User user) {
-	  System.out.println("inside validateLogin");
+	  System.out.println("inside validateLogin start");
 		 UserService userService = UserServiceFactory.getUserService();
-		    User user1 = userService.getCurrentUser();  // Find out who the user is.
+		 System.out.println("inside validateLogin1");
+		    User user1 = userService.getCurrentUser();
+		    
+		    // Find out who the user is.
+		    System.out.println("inside validateLogin2");
 		    List<Task> tasks = null;
+		    System.out.println("before if :"+user1);
 		    if (user1 != null) {
+		    	
 		    	 
 
 		    	    // Run an ancestor query to ensure we see the most up-to-date

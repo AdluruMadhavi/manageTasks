@@ -11,6 +11,8 @@ $(document).ready(
 						console.log("UserName from Login Form = " + username);
 						var password = $('#password').val();
 						console.log("Password from Login Form = " + password);
+						
+						console.log(loginData);
 						$.ajax({
 							type : 'POST',
 							url : 'http://localhost:8080/managetasks/login',
